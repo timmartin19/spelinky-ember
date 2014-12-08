@@ -8,7 +8,7 @@ export default Ember.Component.extend({
         var toReturn = [];
         var tempArray = null;
         for(var i=0; i < this.get('links.length'); i++){
-            if(i % 2 == 0){
+            if(i % 2 === 0){
                 if(tempArray != null){
                     toReturn.push(tempArray);
                 }

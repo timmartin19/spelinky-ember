@@ -10,15 +10,21 @@ export default Ember.View.extend({
             self.$('#adLevelSlider').slider({
                 min: 0,
                 max: 100,
-                value: $('input#adLevelInput').val(),
+                value: self.$('input#adLevelInput').val(),
                 change: function(event, ui){
-                    $('input#adLevelInput').val(ui.value);
+                    self.$('input#adLevelInput').val(ui.value);
                 },
-                slide: function(event, ui){
-                    Spelinky.UIHelpers.setAdIndicatorControls(ui.value);
+                slide: function(){
+                    var relativeSize = (50 - self.$('input#adLevelInput').val()) / 150;
+                    //$('#adLevelSlider').css('background-color', "rgb(" + red + ', ' + green + ', 50)');
+                    Ember.$('#lessAdsIndicator').css('font-size', (1 + relativeSize) + 'em');
+                    Ember.$('#moreAdsIndicator').css('font-size', (1 - relativeSize) + 'em');
                 },
-                create: function(event, ui){
-                    Spelinky.UIHelpers.setAdIndicatorControls($('input#adLevelInput').val())
+                create: function(){
+                    var relativeSize = (50 - self.$('input#adLevelInput').val()) / 150;
+                    //$('#adLevelSlider').css('background-color', "rgb(" + red + ', ' + green + ', 50)');
+                    Ember.$('#lessAdsIndicator').css('font-size', (1 + relativeSize) + 'em');
+                    Ember.$('#moreAdsIndicator').css('font-size', (1 - relativeSize) + 'em');
                 }
             });
         });

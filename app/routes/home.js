@@ -5,6 +5,6 @@ import Ember from "ember";
 
 export default Ember.Route.extend({
     model: function(){
-        return this.store.find('user', Spelinky.UIHelpers.userId());
+        return this.store.find('user', parseInt(Ember.$('meta[name="currentUser"]').attr('content')));
     }
 });

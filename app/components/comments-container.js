@@ -11,7 +11,7 @@ export default Ember.Component.extend({
             var store = this.get('store');
             var comments = this.get('comments');
             var self = this;
-            var userId = $('meta#userId').attr('content');
+            var userId = Ember.$('meta#userId').attr('content');
             store.find('user', userId).then(function(owner){
                 var new_comment = store.createRecord('comment', {
                     comment_text: comment,
@@ -20,7 +20,7 @@ export default Ember.Component.extend({
                 comments.pushObject(new_comment);
                 new_comment.save();
                 self.set('newComment', '');
-            })
+            });
         }
     }
 });

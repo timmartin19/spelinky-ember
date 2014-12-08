@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     model: function(params){
         var userId = null;
         if(params == null || params.id == null) {
-            userId = $('meta#userId').attr('content');
+            userId = Ember.$('meta#userId').attr('content');
         }else{
             userId = params.id;
         }

@@ -6,8 +6,8 @@ import Ember from "ember";
 export default Ember.ObjectController.extend({
     isCurrentUser: function(){
         var currentViewingId = this.get('model.id');
-        var currentUserId = parseInt($('meta#userId').attr('content'));
-        return currentViewingId == currentUserId;
+        var currentUserId = parseInt(Ember.$('meta#userId').attr('content'));
+        return currentViewingId === currentUserId;
     }.property('isCurrentUser'),
     needs: ['links', 'link'],
     actions: {

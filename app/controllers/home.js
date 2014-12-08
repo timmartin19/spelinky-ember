@@ -9,7 +9,7 @@ export default Ember.ObjectController.extend({
             if(!url){return false;}
             if(!url.trim()){return;}
             var store = this.get('store');
-            var userId = $('meta#userId').attr('content');
+            var userId = Ember.$('meta#userId').attr('content');
             var self = this;
             store.find('user', userId).then(function(owner){
                 var newLink = store.createRecord('link', {
