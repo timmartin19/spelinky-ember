@@ -1,0 +1,11 @@
+<div class="comments-container">
+    {{#each c in comments}}
+        {{indv-comment comment=c}}
+    {{/each}}
+    <div>
+        <form class="inline-form">
+            <button type="submit" class="inline-form-btn btn btn-primary pull-right" {{action 'postComment' newComment on="click"}}>post</button>
+                {{input class="form-control inline-form-input" value=newComment placeholder="make a comment!"}}
+        </form>
+    </div>
+</div>

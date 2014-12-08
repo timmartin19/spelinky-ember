@@ -1,0 +1,9 @@
+<div class="row">
+    {{#each linksGrouping}}
+        <div class="row"></div>
+            {{#each}}
+                {{indv-link link=this store=store}}
+            {{/each}}
+        </div>
+    {{/each}}
+</div>

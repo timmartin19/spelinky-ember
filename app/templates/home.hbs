@@ -1,0 +1,59 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-links">
+                    <span class="sr-only">}Main navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    {{#link-to "home" class="navbar-brand"}}Spelinky{{/link-to}}
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-nav-links">
+            <ul class="nav navbar-nav">
+                {{#link-to "home" tagName="li" class="nav-link"}}
+                <a {{bind-attr href="view.href"}}>
+                    <span class="glyphicon glyphicon-home"></span>home
+                </a>{{/link-to}}
+
+                {{#link-to "profile" 1 tagName="li" class="nav-link"}}
+                <a {{bind-attr href="view.href"}}>
+                    <span class="glyphicon glyphicon-user"></span>profile
+                </a>
+            {{/link-to}}
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="{% trans %}search for friends{% endtrans %}">
+                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                </div>
+                <button type="submit" class="btn btn-default sr-only" id="searchBtn">search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><span class="glyphicon glyphicon-log-out">Logout</span></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row link-input-row">
+        <div class="col-sm-12">
+            <form>
+                <div class="input-group link-input">
+                    {{input type="url" value=newUrl class="form-control" placeholder="paste a link!"}}
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary" {{action 'postLink' newUrl on="click"}}>link-it!</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="nav-spacer"></div>
+
+    {{outlet}}
+</div>
