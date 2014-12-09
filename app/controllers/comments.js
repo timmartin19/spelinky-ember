@@ -3,7 +3,7 @@
  */
 import Ember from "ember";
 
-export default Ember.Component.extend({
+export default Ember.ArrayController.extend({
     actions: {
         postComment: function(comment){
             if(!comment){return false;}
