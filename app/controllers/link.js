@@ -1,9 +1,9 @@
 /**
- * Created by Tim Martin on 12/7/2014.
+ * Created by Tim Martin on 12/8/14.
  */
 import Ember from "ember";
 
-export default Ember.Component.extend({
+export default Ember.ObjectController.extend({
     actions: {
         toggleComments: function(){
             this.set('viewingComments', !this.get('viewingComments'));

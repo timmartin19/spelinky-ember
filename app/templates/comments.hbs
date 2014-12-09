@@ -1,6 +1,6 @@
 <div class="comments-container">
-    {{#each c in comments}}
-        {{indv-comment comment=c}}
+    {{#each}}
+        {{render 'comment' this}}
     {{/each}}
     <div>
         <form class="inline-form">

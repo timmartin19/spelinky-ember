@@ -4,12 +4,10 @@
 import Ember from "ember";
 
 export default Ember.ObjectController.extend({
+    needs: ['home', 'links', 'link'],
     isCurrentUser: function(){
-        var currentViewingId = this.get('model.id');
-        var currentUserId = parseInt(Ember.$('meta#userId').attr('content'));
-        return currentViewingId === currentUserId;
-    }.property('isCurrentUser'),
-    needs: ['links', 'link'],
+        return this.get('model') === this.get('controllers.home.model');
+    }.property('model', 'controllers.home.model'),
     actions: {
         postLink: function(url){
             this.get('controllers.links').send('postLink', url);

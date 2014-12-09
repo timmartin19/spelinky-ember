@@ -3,40 +3,39 @@
         <img class="profile-img" alt="profile image" {{bind-attr src=profile_img}}>
     </div>
     <div class="col-sm-9">
-        <div class="row profile-row">
-            <div class="col-sm-3 profile-header">Username: </div>
-            <div class="col-sm-9">{{username}}</div>
-        </div>
-        <div class="row profile-row">
-            <div class="col-sm-3 profile-header">Name: </div>
-            <div class="col-sm-9">{{fullName}}</div>
-        </div>
-        {{#if isCurrentUser}}
-            <div class="row profile-row">
-                <div class="col-sm-3 profile-header">Email: </div>
-                <div class="col-sm-9">{{email}}</div>
+        <div class="display-table">
+            <div class="profile-row">
+                <div class="profile-header">Username: </div>
+                <div class="profile-body">{{username}}</div>
             </div>
-            <div class="row profile-row">
-                <div class="col-sm-3 profile-header">Ad Level: </div>
-                <div class="col-sm-9">
-                    <div class="row">
-                        <div class="col-xs-1"><span id="lessAdsIndicator">$</span></div>
-                        <div id="adLevelSlider" class="slider col-xs-6" style="margin-top: .3em;"></div>
-                        <div class="col-xs-5"><span id="moreAdsIndicator">$$$</span></div>
-                        {{input type="hidden" value=ad_level id="adLevelInput"}}
+            <div class="profile-row">
+                <div class="profile-header">Name: </div>
+                <div class="profile-body">{{fullName}}</div>
+            </div>
+            {{#if isCurrentUser}}
+                <div class="profile-row">
+                    <div class="profile-header">Email: </div>
+                    <div class="profile-body">{{email}}</div>
+                </div>
+                <div class="profile-row">
+                    <div class="profile-header">Ad Level: </div>
+                    <div class="profile-body">
+                        <div class="ad-indicator ad-indicator-less">$</div>
+                        {{jqui-slider value=ad_level min=0 max=100 class='ad-level-slider'}}
+                        <div class="ad-indicator ad-indicator-more">$$$</div>
                     </div>
                 </div>
-            </div>
-            <div class="row profile-row">
-                <div class="col-sm-3 profile-header">Anonymous: </div>
-                <div class="col-sm-6">
-                    {{input type="checkbox" checked=anonymous class="checkbox"}}
+                <div class="profile-row">
+                    <div class="profile-header">Anonymous: </div>
+                    <div class="profile-body">
+                        {{input type="checkbox" checked=anonymous class="checkbox"}}
+                    </div>
                 </div>
-            </div>
-        {{/if}}
+            {{/if}}
+        </div>
     </div>
 </div>
 
 <br/>
 <h3>My Links: </h3>
-{{links-container links=sortedLinks store=controller.store}}
+{{render 'links' sortedLinks}}

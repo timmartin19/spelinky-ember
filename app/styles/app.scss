@@ -1,5 +1,24 @@
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
+.ad-indicator {
+    display:inline-block;
+}
+
+.ad-indicator-less {
+    color: red;
+}
+
+.ad-indicator-more {
+    color: green;
+}
+
+.ad-level-slider {
+    max-width: 300px;
+    display: inline-block;
+    min-width: 100px;
+    width: 100%;
+}
+
 .nav-link{
     cursor: pointer;
 }
@@ -36,9 +55,24 @@
     height: 25px;
 }
 
+.display-table {
+    display: table;
+}
+
+.profile-body {
+    display: table-cell;
+    min-width: 350px;
+}
+
 .profile-header {
     font-weight: bolder;
     font-size: larger;
+    display: table-cell;
+    min-width: 120px;
+}
+
+.profile-row {
+    display: table-row;
 }
 
 .profile-img {

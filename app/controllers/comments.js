@@ -1,5 +1,5 @@
 /**
- * Created by Tim Martin on 12/7/2014.
+ * Created by Tim Martin on 12/8/14.
  */
 import Ember from "ember";
 
