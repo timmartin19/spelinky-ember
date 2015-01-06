@@ -6,8 +6,8 @@ import Ember from "ember";
 export default Ember.ObjectController.extend({
     actions: {
         toggleComments: function(){
-            this.set('viewingComments', !this.get('viewingComments'));
+            this.set('hidingComments', !this.get('hidingComments'));
         }
     },
-    viewingComments: false
+    hidingComments: true
 });

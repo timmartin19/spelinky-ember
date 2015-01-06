@@ -1,0 +1,56 @@
+$link-width: 400px;
+$comment-btn-spacing: .5em;
+
+.comments-btn {
+  position: absolute;
+  bottom: $comment-btn-spacing;
+  right: $comment-btn-spacing;
+}
+
+.link-container {
+  width: 100%;
+  display: inline-block;
+  height: 15em;
+  padding: 1em;
+}
+
+.link-panel {
+  height: 100%;
+  position: relative;
+}
+
+//.link-panel .link-content {
+//  height: 100%;
+//  width: 100%;
+//}
+
+.link-panel > .panel-body {
+  padding-bottom: 0;
+}
+
+.links-row > ul {
+  display: block;
+}
+
+.link-profile-img {
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (min-width: $link-width * 2) {
+  .link-container {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: $link-width * 3) {
+  .link-container {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: $link-width * 4) {
+  .link-container {
+    width: 24%;
+  }
+}

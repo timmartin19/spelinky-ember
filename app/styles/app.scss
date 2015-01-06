@@ -1,4 +1,6 @@
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import 'newlink';
+@import 'link';
 
 .ad-indicator {
     display:inline-block;
@@ -33,26 +35,6 @@
 
 .profile-row {
 
-}
-
-.link-input-row {
-    position: fixed;
-    top: 50px;
-    z-index: 1000;
-    padding: .5em;
-    background-color: #bbbbbb;
-    width: 100%;
-    text-align: center;
-}
-
-.link-input {
-    max-width: 50em;
-    margin: 0 auto;
-}
-
-.link-profile-img {
-    width: 25px;
-    height: 25px;
 }
 
 .display-table {
